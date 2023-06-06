@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando e Manipulando Elementos de Input Text</title>
+
+    <script>
+        //Para fazer a seleção de elementos no DOM, nós temos alguns métodos da API do DOM acessíveis apartir do objeto document 
+        function distribuiCaracter() {
+            //selecionar o valor digitado, a partir da propriedade onkeyup, onde value recupera o caractere digitado
+            var caracter = document.getElementById('entrada').value
+            // limpa o campo de digitação
+            document.getElementById('entrada').value = ''
+
+            //limpar espaços em branco nas extremidades da string
+            caracter.trim()
+
+            switch (caracter){
+                /*
+                    os valores recuperados de elementos html são identificados como strings dentro do script, por isso será comparado com uma string, visto que o case faz comparação por idêntico
+                */
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    //adicionar o caracter no campo referente a números
+                    document.getElementById('apenas_numeros').value += caracter
+                    break
+                default:
+                    //adicionar caracter no campo referente a letras
+                    document.getElementById('apenas_letras').value += caracter
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <!-- 
+        <input  
+            placeholder="Digite um caractere aqui" 
+            id="nome_usuario" 
+            class="campo_texto"
+            name="nome" type="text">
+    -->
+
+
+    <input type="text" placeholder="Digite um caractere aqui" onkeyup="distribuiCaracter()" id="entrada" />
+
+    </br>
+    </hr>
+
+    <span>Letras:</span>
+    <input type="text" disabled="disabled" id="apenas_letras" />
+        
+    </br>
+    </hr>
+    
+    <span>Números:</span>
+    <input type="text" disabled="disabled" id="apenas_numeros" />
+
+        <script>
+
+            //console.log(document.getElementById('nome_usuario'))
+            // console.log(document.getElementsByTagName('input'))
+            // console.log(document.getElementsByClassName('campo_texto'))
+            // console.log(document.getElementsByName('nome'))
+
+
+        </script>
+
+</body>
+</html>

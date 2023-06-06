@@ -1,0 +1,27 @@
+.conteudo {
+	border: 1px solid red;
+
+	padding: 20px;
+	/*
+		o padding trabalha com o espaçamento interno da box, tanto em altura quanto em largura. 
+		Apenas 'padding' define os quatro valores, que de outra forma, são declarados a partir do sentido horário,
+		ou especificamente em uma direção. Atentando ao fato de que o padding expande a altura e a largura, se 
+		sobrebondo ao width, se antes a caixa tinha 150px, com um padding no lado direito de 20px, a caixa passa a ter
+		170px.
+	*/
+
+	/* 
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px; 
+	*/
+	padding: 20px 15px 10px 5px;
+	width: 150px;
+
+	/*
+		margin segue a mesma lógica do padding porém trata do espaçamento externo e se aplicadas de maneira redundante,
+		como por exemplo uma margin-bottom de 10px numa box e o mesmo (margin-top) em outro box adjacente, as margens 
+		se sobrepõem ao invés de marem 20px, seguem os mesmos 10px ou a maior margem definida.
+	*/
+	margin-bottom: 15px;
+}

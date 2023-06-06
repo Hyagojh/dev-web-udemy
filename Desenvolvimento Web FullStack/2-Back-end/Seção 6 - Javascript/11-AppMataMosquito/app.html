@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="jogo.js"></script>
+    </head>
+    <body onresize="ajustaTamanhoPalcoJogo()">
+      
+        <div class="painel">
+
+            <div class="vidas">
+                <img id="v1" src="imagens/coracao_cheio.png">
+                <img id="v2" src="imagens/coracao_cheio.png">
+                <img id="v3" src="imagens/coracao_cheio.png">
+            </div>
+
+            <div class="cronometro"> 
+                Tempo restante: <span id="cronometro"></span> 
+            </div>
+
+        </div>
+
+        <script>
+            posicaoRandomica()
+            document.getElementById('cronometro').innerHTML = tempo
+            /*
+                Criar e remover os elementos HTML, com base em um intervalo de tempo. Antes de criar um novo, remove-se o anterior.
+            */
+
+            var criaMosquito = setInterval(function(){
+                posicaoRandomica()
+            }, criaMosquitoTempo)
+            
+        </script>
+    </body>
+</html>

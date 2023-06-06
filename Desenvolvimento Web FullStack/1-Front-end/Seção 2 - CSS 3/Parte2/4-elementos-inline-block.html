@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Elementos inline, block e inline-block</title>
+		<meta charset="utf-8">
+		
+		<style type="text/css">
+
+		/*
+			Elementos do tipo block: eles tem uma largura que ocupa todo espaçamento da tela, ele ocupará todo espaço disponível, além disso, esses elementos ficam um abaixo do outro. Exemplos: <h1>, <p>, <table>.
+
+			Elementos do tipo inline: um elemento é disposto a frente do outro e seu tamanho (largura da caixa) é diretamente relacionado ao seu conteúdo. Ex: <span>, <img>, <a>.
+
+			Elementos inline-block: sua largura é definida conforme seu conteúdo, mas os itens só são dispostos um abaixo do outro quando o elemento já não cabe mais na linha superior. Ex: display: inline-block. 
+		*/
+
+			.borda{
+				border: 1px solid red;
+				display: inline-block;
+			}
+
+		</style>
+		
+	</head>
+	<body>
+
+		<span class="borda">
+			inline-block
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+		</span>
+
+		<span class="borda">
+			inline 2 
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom
+			lorem ipsum dolorem sit amet dolom</span>
+
+		<h1>block</h1>
+
+		<p>block</p>
+
+		<!--
+			<div class="borda">Bloco 1</div>
+			<div class="borda">Bloco 2</div>
+		-->
+
+	</body>
+
+</html>

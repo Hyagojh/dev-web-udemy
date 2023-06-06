@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timming</title>
+
+    <script>
+
+        /*
+            Dois métodos específicos do objeto window como o setTimeout (<ação>, <tempo em milisegundos>); clear Timeout()
+
+                Executa ação uma vez após o tempo informado
+
+
+            setInterval (<ação>, <tempo em milisegundos>); clearInterval
+
+                Sempre executa a ação após o período informado
+        */
+
+        //window.setTimeout(function() {document.write('Teste </br>')}, 2000)
+
+        var i = 10
+
+        var x = window.setInterval(function() {document.write(i + '</br>'); i--; if(i === 0) {clearInterval(x)}}, 1000)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar - Polimorfismo</title>
+
+    <script>
+
+        /*
+            Sobrescrita padrão: 
+
+            mesma assinatura (sobreposição) = sobrescrita em classes diferentes
+            assinatura diferente (sobrecarga) = sobrescrita na mesma classe
+        */
+
+        class Animal {
+            constructor(cor, tamanho, peso){
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+
+            dormir(){
+                console.log('Dormir')
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor(cor, tamanho, peso) {
+                super(cor, tamanho, peso)
+                this.bico = 'Pontiagudo'                
+            }
+
+            voar(){
+                console.log('Voar')
+            }
+        }
+
+        class Papagaio extends Passaro {
+            constructor(sabeFalar, cor, tamanho, peso){
+                super(cor, tamanho, peso)
+                this.sabeFalar = sabeFalar
+            }
+
+            falar(){
+                if(sabeFalar === true){
+                    console.log('Falando')
+                }
+            }
+        }
+
+        class Avestruz extends Passaro {
+            constructor(){
+                super('Grande', 'Branco e preto', 250, 15000)
+            }
+
+            enterrarCabeca(){
+                console.log('Enterrar a cabeça')
+            }
+
+            //polimorfismo de sobreposicao
+            voar(){
+                console.log('Não sabe voar')
+            }
+
+        }
+
+        let edwiges = new Passaro('Laranja', 50, 100)
+        let loro = new Papagaio(true, 'Verde', 50, 100)
+        let ave = new Avestruz()
+
+        console.log(edwiges)
+        console.log(loro) 
+        console.log(ave)       
+        
+        edwiges.voar()
+        ave.voar()
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

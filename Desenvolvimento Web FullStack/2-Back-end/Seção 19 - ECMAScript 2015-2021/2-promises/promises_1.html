@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <!-- É um objeto para realização de processamentos assíncronos. representa um valor que pode estar disponível agora, no futuro ou nunca -->
+    <script>
+        /* 
+            A função passada por parâmetro trabalha dois aspectos de um promessa, a solução ou eventual rejeição, utilizado geralmente em contexto com requisições http
+        */
+        let promessa = new Promise((resolve, reject) => {
+            try{
+
+                setTimeout(() => {
+                    resolve('Promessa concluída com sucesso')
+                }, 3000)
+            } catch {
+
+                setTimeout(() => {
+                    reject(e)
+                }, 3000)
+            }
+        })
+
+        console.log(promessa)
+    </script>
+</body>
+</html>

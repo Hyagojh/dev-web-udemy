@@ -1,0 +1,5 @@
+/*
+    XML - eXtensible Markup Language, uma linguagem de marcação que serve para estruturar e descrever informações, basicamente o XML é um recurso para comunicação entre sistemas distintos web ou não.
+
+    XML não é suportado pelo JS, por isso o parse para JSON, além do mais como XML é um texto puro, fica difícil fazer tratativas em cima dele, então transformando em um objeto é possível manipulalr suas respectivas informações.
+*/

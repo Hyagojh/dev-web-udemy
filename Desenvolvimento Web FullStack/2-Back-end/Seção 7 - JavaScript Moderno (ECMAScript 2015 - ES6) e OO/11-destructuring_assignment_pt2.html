@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment parte 2</title>
+
+    <script>
+
+        /*
+            No contexto de funções: como passar arrays e objetos como parâmetros e dentro das funções capturar apenas o necessário dessas estruturas.
+        */
+
+        let arr = [10, 20, 30, 40]
+
+
+        //isolando os parâmetros: a = arr[0]; b = arr[1]; c = arr [3]
+        function teste([ a, b, ,c ]) {
+            console.log(a, b)
+        }
+
+        teste(arr)
+
+        //isolando atributos
+        let obj = {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+        }
+
+        function teste1({a, b, c}) {
+            console.log(a, b)
+        }
+
+        teste(obj)
+
+        //destructuring + rest em array
+        let arr1 = [10, 20, 30, 40] 
+
+        let [a, ...resto] = arr1
+
+        //destructuring + rest em obj
+        let obj1 = {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+        }
+
+        let {c, ...resto1} = obj1
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

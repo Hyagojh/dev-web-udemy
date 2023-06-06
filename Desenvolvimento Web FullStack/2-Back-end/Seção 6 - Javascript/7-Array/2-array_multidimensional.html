@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Multidimensionais</title>
+
+    <script>
+
+        /*
+            Arrays multidimensionais são arrays compostos por outros arrays, dentro de indices de um array podem ser encadeados outros arrays.
+        */
+
+        var lista_coisas = Array()
+
+        lista_coisas ['frutas'] = Array()
+
+        lista_coisas ['frutas'][0] = 'Maça'
+        lista_coisas ['frutas'][1] = 'Uva'
+        lista_coisas ['frutas'][2] = 'Laranja'
+        lista_coisas ['frutas'][3] = 'Tangerina'
+
+        lista_coisas ['pessoas'] = Array('Pessoa 1', 'Pessoa 2', 'Pessoa 3')
+
+        console.log (lista_coisas)
+
+        /*
+            Acessar índices:
+        */
+
+        document.write(lista_coisas['frutas'][0])
+
+    </script>
+
+</head>
+<body>
+    
+
+
+</body>
+</html>

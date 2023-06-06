@@ -1,0 +1,19 @@
+#caixa{
+	width: 300px;
+	height: 300px;
+	background: url(../imagens/camera.png);
+}
+
+#caixa h1{
+	/*Aplicação da transparência: último parâmetro é a opacidade
+	background: rgb(255, 255, 255, 0.8);*/
+
+	/*
+	Outro modo de aplicar transparência, onde podem ser usados
+	parâmetros como 'deg' que controlam a graduação e rotação e o 'to' que
+	configura a orientação
+	background: linear-gradient(to right, red, yellow);
+	*/
+
+	background: radial-gradient (red, green, yellow);
+}

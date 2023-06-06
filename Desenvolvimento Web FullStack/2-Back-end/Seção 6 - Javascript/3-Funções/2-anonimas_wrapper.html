@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções anônimas e wrapper</title>
+
+    <script>
+
+        /*
+            Funções anônimas tem a sintaxe identica a uma função comum, a diferença está no fato de que elas não possuem nome, recursos muito utilizados principalmente dentro de callbacks (funções dentro de funções). Declaração:
+        */
+
+        /* function(){
+            document.write('Olá, mundo!')
+        }*/
+
+        /*
+            Como chamar a função? É a técnica de wrapper, o JS permite associar a uma variável não apenas tipos, mas também funções. A variável passa a guardar uma referência para a função de modo a embrulhar a mesma.
+        */
+
+        var exibirFuncao = function (){
+            document.write('Olá, munndo!')
+        }
+
+        exibirFuncao()
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

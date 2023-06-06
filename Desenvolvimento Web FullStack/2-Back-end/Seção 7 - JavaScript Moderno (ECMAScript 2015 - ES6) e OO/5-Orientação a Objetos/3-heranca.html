@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar - Herança</title>
+
+    <script>
+
+        /*
+           Herança funciona parecido com as outras linguagens. Referente ao operador super: ele fornecesse acesso ao método construtor da classe pai e deve ficar antes de qualquer operador 'this', pode-se ou não passar parâmetros
+        */
+
+        class Animal {
+            constructor(cor, tamanho, peso){
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+
+            dormir(){
+                console.log('Dormir')
+            }
+        }
+
+
+        class Cachorro extends Animal {
+            constructor(cor, tamanho, peso){
+                super('Branco e marrom', 30, 10)
+                this.orelhas = 'Grandes e caídas'               
+            }
+
+            correr(){
+                console.log('Correr')
+            }
+
+            rosnar(){
+                console.log('Rosnar')
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor(cor, tamanho, peso) {
+                super(cor, tamanho, peso)
+                this.bico = 'Pontiagudo'                
+            }
+
+            voar(){
+                console.log('Voar')
+            }
+        }
+
+        class Papagaio extends Passaro {
+            constructor(sabeFalar, cor, tamanho, peso){
+                super(cor, tamanho, peso)
+                this.sabeFalar = sabeFalar
+            }
+
+            falar(){
+                if(sabeFalar === true){
+                    console.log('Falando')
+                }
+            }
+        }
+
+        let rex = new Cachorro()
+        let edwiges = new Passaro('Laranja', 50, 100)
+        let loro = new Papagaio(true, 'Verde', 50, 100)
+
+        rex.dormir()
+        edwiges.dormir()
+        loro.dormir()
+
+        console.log(rex)
+        console.log(edwiges)
+        console.log(loro)         
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

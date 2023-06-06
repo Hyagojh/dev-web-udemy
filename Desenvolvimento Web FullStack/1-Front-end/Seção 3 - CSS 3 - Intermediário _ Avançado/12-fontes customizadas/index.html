@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fontes customizadas</title>
+	<!--Utilizar fontes mesmo que o usuário não as tenha no seu computador através de arquivos de fonte, onde é necessário a converter
+	para o formato woff (web open font format)-->
+	<style type="text/css">
+		/*Font face é a maneira de, via css, reconhecer uma fonte customizada, onde é dado um nome fantasia e se indica a localização da fonte*/
+		@font-face {
+			font-family: "Road Rage";
+			src: url("fontes/RoadRage.woff");
+		}
+
+		@font-face {
+			font-family: Heart;
+			src: url("fontes/BringHeart.woff");
+		}
+
+		@font-face {
+			font-family: Ancient;
+			src: url("fontes/Ancient-Medium.woff");
+		}
+
+		h1 {
+			font-size: 6em;
+			font-family: Ancient;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1>Fontes Customizadas</h1>
+
+</body>
+</html>

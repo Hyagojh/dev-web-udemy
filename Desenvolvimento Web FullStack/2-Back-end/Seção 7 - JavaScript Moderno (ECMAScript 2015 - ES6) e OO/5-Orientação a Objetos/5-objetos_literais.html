@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Literal/Estático</title>
+
+        <script>
+
+            /*
+                Na prática um objeto literal é um objeto DESCRITO dentro do código. São muito utilizados pois nem sempre necessita-se a criação de uma classe, geralmente são objetos únicos dentro da aplicação, de modo que mesmo ao criar outro objeto de mesmo nome, oq acontecerá é q esse novo objeto apontará para o mesmo criado inicialmente é uma 'passagem por referência'.
+
+                Uso comum de objetos literais:
+
+                ---------------------------------------------------------
+                Formulários -> Servidor
+                    Recupera dados e monta um objeto literal
+                    Obj literal -> JSON -> HTTP -> Server -> Armazena
+            */
+
+            //modo padrão
+            class Produto {
+                constructor(descricao, preco){
+                    this.descricao = descricao
+                    this.preco = preco
+                }
+
+                verDescricao(){
+                    console.log(`${this.descricao} por apenas ${this.preco}`)
+                }
+            }
+
+            let produto = new Produto('Notebook', 2200)
+            produto.verDescricao()
+
+            //objeto literal (ES5)
+            let produtoLiteral = {
+                descricao: 'Geladeira',
+                preco: 1800,
+                verDescricao: function(){
+                    console.log(`${this.descricao} por apenas ${this.preco}`)
+                }
+            }
+
+            produtoLiteral.verDescricao()
+
+            //forma ES5 de escrever o objeto literal
+
+            /*
+            let nome = 'Jaques'
+            let idade = 21
+            let sexo = 'Masculino'
+            let profissao = 'Desenvolvedor'
+
+            let objeto = {
+                nome: nome ,
+                idade: idade,
+                sexo: sexo,
+                profissao: profissao,
+
+                exibirResumo: function(){
+                    console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+                }
+            }
+
+            console.log(objeto)
+            objeto.exibirResumo()
+            */
+           
+            //forma ES6 - Em situações que a variável tem o mesmo nome do nome/valor
+            let nome = 'Jaques'
+            let idade = 21
+            let sexo = 'Masculino'
+            let profissao = 'Desenvolvedor'
+
+            let objeto2 = {
+                nome, //nome = nome variável/ valor = valor da variável
+                idade,
+                sexo,
+                profissao,
+
+                exibirResumo(){
+                    console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+                }
+            }
+
+            objeto2.nome = 'José'
+
+            console.log(objeto2)
+            objeto2.exibirResumo()
+
+            //inclusao de atributos e métodos posteriormente
+
+            let pessoa = {
+                nome: 'Maria', 
+                idade: 25
+            }
+
+            console.log(pessoa)
+
+            pessoa.sexo = 'Feminino'
+
+            console.log(pessoa)
+
+            pessoa.dizerOi = () => console.log('Olá, tudo bem?')
+
+            pessoa.dizerOi()
+
+            //exemplificação de como o objeto literal é único
+
+            let assinatura = {
+                idCliente: 1000,
+                descricao: 'Acesso a internet',
+                status() {
+                    console.log('Ativo')
+                }
+            }
+
+            console.log(assinatura.descricao)
+
+            let y = assinatura
+            console.log(y.descricao)
+
+
+            y.descricao = 'Internet + Tv + Telefone'
+            
+            console.log(assinatura.descricao)
+            console.log(y.descricao)
+
+        </script>
+
+</head>
+<body>
+    
+</body>
+</html>

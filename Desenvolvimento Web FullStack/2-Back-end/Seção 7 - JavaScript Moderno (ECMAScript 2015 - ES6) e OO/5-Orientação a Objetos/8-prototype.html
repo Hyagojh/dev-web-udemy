@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+
+    <script>
+
+        /*
+            Todos os objetos em JS descendem de  'Object' e por trás disso existe o prototype, quando se cria classes e se instanciam os objetos, na prática oq acontece por 'trás dos panos' é o prototype (um modelo/padrão).
+
+            Todos os objetos possuem, após instanciados, um atributo chamado '_proto_' que indica a descendência ao Object (que não é um object e sim uma função) que tem seus próprios atributos e métodos.
+
+            Prototype chain permite que um determinado objeto tenha seu protótipo referenciado, mas não para object mas sim para outros objetos e estabelecer a relação de herança por baixo dos panos.
+        */
+
+        /*
+            avião{atributos: cor e modelo;} {métodos: levantarVoo}
+        */
+
+        /*
+        //objeto literal
+        let A1 = {
+            cor: 'Branco',
+            modelo: 'Airbus a380',
+            levantarVoo: function() {
+                console.log('Levantou voo')
+            }
+        }
+
+    
+        //funcao construtora
+        let A2 = function() {
+            this.cor = 'Azul',
+            this.modelo = 'Boeing 787',
+            this.levantarVoo = function() {
+                console.log('Levantou voo')
+            }
+        }
+
+        let aviaoF = new A2()
+
+        //classe
+
+        class A3  {
+            constructor() {
+                this.cor = 'Vermelho',
+                this.modelo = 'Embraer E-Jets'
+            }
+
+            levantarVoo() {
+               console.log('Levantou voo') 
+            }
+        }
+
+        let aviaoC = new A3()
+
+        console.log(A1)
+        console.log(aviaoF)
+        console.log(aviaoC)   
+        */
+
+        /*
+            Prototype Chain
+
+            Inicialmente todos são filhos de object, mas ao extender/herdar de uma outra classe/objeto, o prototype do herdeiro passa a apontar também para o protótipo da classe mãe e não mais apenas para object. Isso pode ser feito diretamente através do atributo '__proto__'. Trabalhando com esse princípio, pode-se criar atributos comuns a todos objetos, alterando diretamente no objeto prototype.
+        */
+
+        Object.prototype.attr50 = 'z'
+       
+        let animal = {
+            attr1: 'a'
+        }
+
+        let vertebrado = {
+            attr2: 'b'
+        }
+        
+        let ave = {
+            __proto__: vertebrado,
+            attr3: 'c'
+        }
+
+        console.log(ave.attr2, ave.attr50)
+        console.log(ave, vertebrado, animal)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

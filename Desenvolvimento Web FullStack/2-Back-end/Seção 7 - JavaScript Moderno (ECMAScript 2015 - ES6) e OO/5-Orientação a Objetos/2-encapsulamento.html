@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar - Encapsulamento</title>
+
+    <script>
+
+        /*
+            JS no ES6 ainda não suporta operadores de  visibilidade, para isso, existe uma convenção para o controle de visibilidade de atributos.
+
+            Para criar um atributo que seja restrito a apenas o objeto usa-se o underline. 
+
+            getters e setters funcionam normalmente. Ao invés de acessar direto pelo atributo junto de underscore, é de boa prática usar o get e para isso se usa o nome do método get sem passar parâmetros e nem o underline.
+        */
+
+        class Tv {
+            constructor() {
+                this._relacaoCanais = Array(2, 4, 5, 7, 10)
+                this._canalAtivo = 5
+                this._volume = 5
+            }
+
+            //getters
+
+            get relacaoCanais() {
+                return this._relacaoCanais
+            }
+
+            get canalAtivo() {
+                return this._canalAtivo
+            }
+
+            get volume() {
+                return this._volume
+            }
+
+            //setters
+
+            set relacaoCanais(relacao){
+                this._relacaoCanais = relacao
+            }
+
+            set canalAtivo(canal){
+                //verifica se o canal solicitado existe
+                let x = this.relacaoCanais.indexOf(canal)
+                this._canalAtivo = canal
+            }
+
+            set volume(novo_volume){
+                this._volume = novo_volume
+            }
+        }
+
+        let televisao = new Tv()
+        televisao.canalAtivo = 10
+        console.log(televisao.canalAtivo)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

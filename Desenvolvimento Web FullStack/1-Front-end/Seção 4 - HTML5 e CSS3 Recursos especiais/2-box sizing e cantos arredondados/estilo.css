@@ -1,0 +1,16 @@
+#caixa {
+    width: 300px;
+    height: 300px;
+    background: #b9c941;
+    padding: 10px;
+    margin: 10px;
+    /* Define o arredondamento, que pode também ser definido por posição*/
+    /* border-radius: 20px; */
+    border-radius: 10px 50px 80px 100px;
+    /*Faz com que a caixa mude seu comportamento e não mais seja acrescida pelo padding*/
+    box-sizing: border-box;
+}
+
+.arredondamento {
+    border-radius: 150px;
+}

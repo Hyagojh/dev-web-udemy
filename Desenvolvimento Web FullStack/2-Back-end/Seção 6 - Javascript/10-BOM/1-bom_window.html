@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - Browser Object Model - Janela'</title>
+
+    <script>
+
+        /*
+            BOM é uma forma de se comunicar através do JS com recursos do Browser, como por exemplo acessar o histórico de navegação, forçar o redirecionamento de URL, salvar e recuperar cookies...
+        */
+
+        var janela
+
+        function abrirPopUp(){
+            //seus parâmetros são variáveis e vale a pena consulta-los
+            janela = window.open('http://www.google.com', 'nova_janela', 'width=200')
+        }
+
+        function fecharPopUp() {
+            janela.close()
+        }
+
+    </script>
+
+</head>
+<body>
+    <button onclick="abrirPopUp()">Abrir Janela</button>
+    <button onclick="fecharPopUp()">Fechar Janela</button>
+    <button onclick="window.print">Imprimir Página</button>
+</body>
+</html>

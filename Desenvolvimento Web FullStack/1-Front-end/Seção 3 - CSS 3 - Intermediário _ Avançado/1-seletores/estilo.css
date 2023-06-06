@@ -1,0 +1,43 @@
+/*Seletor universal: trata de todos elementos da página*/
+* {
+	border: 1px solid red;
+}
+/*Seletor de texto, que selecionam elementos pelo tipo*/
+h1 {
+	color: green;
+}
+/*Seletor de classe, seleciona elementos cujo atributo class tem
+o valor especificado depois do ponto*/
+.verde {
+	color: green;
+}
+/* Seleciona todos os parágrafos que tenham a class 'verde' */
+p.verde {
+	color: green;
+}
+/*Seletor de ID, seleciona elementos cujo atributo ID tem
+o valor especificado depois da cerquilha*/
+#cabecalho {
+	border: 1px solid blue;
+}
+/*Seletor de filho: seleciona um elemento que é filho direto de outro
+onde o "maior" significa que é pai: selecione um link q é filho de li*/
+li > a {
+	color: red;
+	text-decoration: none;
+}
+/*Seletor de descendente: seleciona um elemento que é descendente de outro,
+não apenas filho direto: selecionar links que estejam dentro de uma div*/
+div a {
+	color: green;
+}
+/*Seletor de irmão adjacente: Seleciona um elemento que é o próximo
+irmão de outro: seleciona o primeiro p depois de qualquer elemento h1*/
+h1+p {
+	color: red;
+}
+/*Seletor de irmão geral: seleciona um elemento que é irmão de outro, não
+precisando ser diretamente precedente*/
+h1~p {
+	color: orange;
+}

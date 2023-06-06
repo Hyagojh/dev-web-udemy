@@ -1,0 +1,2 @@
+O framework Ionic é um kit de desenvolvimento de software (SDK), usado para desenvolver aplicativos móveis híbridos com JavaScript, CSS e HTML5. O Ionic usa uma WebView no dispositivo móvel.
+

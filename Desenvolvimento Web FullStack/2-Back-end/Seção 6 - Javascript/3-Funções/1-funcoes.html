@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <script>
+        /*
+             Declaração de função; Void realiza apenas o processamento mas não retorna nada, também conhecido como procedimento e não precisa ser declarado. 
+             Funções podem ser declaradas em qualquer ponto do script, apesar do interpretador usar uma lógica gravitacional para leitura do código, no caso das funções ele antes de tudo as aloca em memória, ou seja, as funções sempre serão lidas primeiro.
+
+             JS tem uma flexiblidade de parâmetros, mesmo que a função tenha parâmetros, em JS não precisa ser passado todos os parâmetros, podendo ser passados mais, menos ou nenhum parâmetro e isso não gerará erro. Caso seja passado mais parâmetros, JS desconsidera os parâmetros adicionais. Em caso de menos parâmetros, oq está ausente receberá o valor 'undefined', ou seja, os parâmetros não indicados, receberão undefinied.
+
+             JS possuí 3 escopos: global (pode ser acessado no script como um todo), da função (escopo apenas dentro da função) e o escopo de bloco (instruções contidas dentro de comandos, como  if e switch), caso seja escrito "var" antes da variável de escopo de bloco, ela se torna global (caso o escopo de bloco seja declarado dentro do escopo da função, essa elevação do escopo acontece, mas apenas para o nível da função e não global). Caso 'var' seja declarado dentro do escopo de uma função, o escopo não se torna global.
+        */
+        function calcularAreaTerreno (largura, comprimento){
+            
+            var area = largura * comprimento
+
+            return area
+
+        }
+
+        var largura = prompt ('Digite a largura do terreno em metros')
+        var comprimento = prompt ('Digite a comprimento do terreno em metros')
+
+        // Chamada da função e passagem de parâmetros
+        var resultado = calcularAreaTerreno(largura, comprimento)
+        document.write('O terreno possuí ' + resultado + ' metros quadrados')
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

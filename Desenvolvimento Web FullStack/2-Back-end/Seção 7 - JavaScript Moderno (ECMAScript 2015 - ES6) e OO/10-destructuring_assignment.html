@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+
+    <script>
+
+        /*
+            É uma feature que tira valores de dentro de uma estrutura, onde essa estrutura pode ser um array ou um objeto.
+        */
+
+        let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+
+        /*modo padrão 
+        let a = frutas[0]
+        let b = frutas[1]
+        let c = frutas[2]
+        */
+       
+        /*
+            destructuring, onde dentro dos colchetes devem ser inseridos os valores que se busca desestruturar, tirar de dentro do array e atribuir a uma variável
+        */
+
+        /*
+            indice 0 na variável a, indice 1 na variavel b, espaço em branco pula um indice. Pode se definir valores padrões de desestruturação através do sinal de atribuição, caso já tenha uma posição para esse array, o valor default é ignorado
+        */
+        let [a, b, , c = 'Maça'] = frutas
+
+
+        /*
+            array bidimensional, onde o colchete duplo indica o desejo por um nome e n o array inteiro.
+        */
+        let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']]
+        let [ , [, x]] = coisas
+
+        /*
+            Desestruturando Objetos, onde 'detalhes' é um outro objeto, onde esse comportamento se chama composição
+        */
+
+        let produto = {
+            descricao: 'Notebook',
+            preco: 1800,
+            detalhes: {
+                fabricante: 'abc',
+                modelo: 'xyz'
+            }
+        }
+
+        /*extrair descricao e preco
+
+        let {descricao, preco} = produto
+        console.log(descricao, preco)
+
+        atribuição a variável
+
+        let {descricao: d, preco: p} = produto
+        console.log(d, p)
+        
+        valores default
+        let {descricao: d, preco: p, desconto = 5} = produto
+        console.log(d, p, desconto)
+        */
+
+        /*
+            extração de atributos de objetos dentro de objetos
+        */
+
+        let {detalhes: {fabrincante, modelo}} = produto
+        console.log(fabrincante, modelo)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

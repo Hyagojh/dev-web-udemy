@@ -1,0 +1,35 @@
+COMO FUNCIONA UMA REQUISIÇÃO?
+
+Ao escrever o endereço de um site, se faz uma REQUISIÇÃO para um servidor web, o servidor dá uma resposta.
+
+
+REQUISIÇÕES HTTP: Hypertext Transfer Protocol - Padronizou a comunicação entre navegadores e servidores.
+
+
+TIPOS DE REQUISIÇÃO:
+
+GET -> Recuperar dados no servidor
+POST -> Criar dado novo no servidor
+PUT -> Atualizar dados no servidor
+DELETE -> Deletar dados no servidor
+Entre outras...
+
+
+
+CÓDIGOS DE STATUS:
+
+EX: 404 - PAGE NOT FOUND
+    200 - OK
+    501 -> BAD GATEWAY
+
+
+
+API - Application Programming Interface - uma maneira de interagir com aplicações de terceiros, que fornece, geralmente, retornos em XML ou JSON.
+
+WEB SERVICE - Solução utilizada na integração de sistemas e na comunicação entre aplicações diferentes. 
+
+Rest - Representational State Transfer -> É uma estrutura de software com um conjunto de melhores práticas denominadas constraints que são utilizadas para criar webservices
+
+RESTful - Determina que o sistema utiliza dessas práticas para se comunicar, seguindo a especificação da arquitetura
+
+CORS - Cross Origin Resource Sharing - Compartilhamento de recursos de origens cruzados é um mecanismo que usa cabeçalhos HTTP adicionais para garantir permissão de acesso a recursos de um servidor diferente do da origem da página. Utilizado com AJAX.

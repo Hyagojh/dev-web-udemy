@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Novas tags html 5</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+	</head>
+	<body>
+
+		<!--Com intuito de agregar em semântica o HTML 5, surgiram as novas tags que definem áreas e facilitam a leitura por parte dos navegadores, que ajuda inclusive pessoas com deficiências visuais a conseguirem navegar pela página. Ajuda diminuindo o número de ids também.-->
+
+		<!--<div id="cabecalho"></div>-->
+		<header>
+			<h1>Logo</h1>
+			<span>Meu site</span>
+		</header>
+
+		<!--<div id="navegacao"></div>-->
+
+		<!--<div id="rodape"></div>-->
+
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Sobre</a></li>
+				<li><a href="">Contato</a></li>
+			</ul>
+		</nav>
+
+		<!--Conteúdos que representam um artigo/postagem/informações, podem ser criadas seções dentro dos article-->
+		<article>
+			<h3>Novos cursos</h3>
+
+		<!--Seções dentro de conteúdos-->
+			<section>
+				<h4>Curso de programação</h4>
+				<p>
+					ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in rehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonroident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+
+				<!--Tags de input-->
+				<form>
+					<label for="nome">Nome</label>
+					<input type="text" name="nome" id="nome" autofocus>
+					<br><br>
+
+					<label for="email">E-mail</label>
+					<input type="email" id="email" required="required">
+					<br><br>
+
+					<label for="numero">Número</label>
+					<input type="number" id="number" min="5" max="10">
+					<br><br>
+
+					<label for="url">URL</label>
+					<input type="url" id="url" placeholder="ex: http://www.....">
+					<br><br>
+
+					<label for="pesquisa">Pesquisa</label>
+					<input type="search" id="pesquisa">
+					<br><br>
+
+					<label for="range">Range</label>
+					<input type="range" id="range" min="1" max="20" value="10">
+					<br><br>
+
+					<label for="data">Data</label>
+					<input type="date" id="data">
+					<br><br>
+
+					<label for="cor">Cor</label>
+					<input type="color" id="cor">
+					<br><br>
+
+					<input type="submit" name="" value="enviar">
+				</form>
+
+				<!--Tag para estruturação de data-->
+				<span>
+					Atualizado em:
+					<time>20/10/2021</time>
+				</span>
+			</section>
+		</article>
+
+		<!--Tags para conteúdos laterais-->
+		<aside>
+			<h3>Sobre o autor</h3>
+			<p>
+				ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in rehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonroident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</aside>
+
+		<footer>
+			<p>&copy; Todos os direitos reservados</p>
+		</footer>
+
+	</body>
+</html>

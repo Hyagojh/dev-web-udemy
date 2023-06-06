@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises 2</title>
+</head>
+<body>
+    <script>
+        let promessa = new Promise((resolve, reject) => {
+            
+            //simulação de requisição http
+            setTimeout(() => {
+                // requisição realizada
+                let resposta_da_requisicao = {}
+
+                //erro na requisição
+                if(false){
+
+                    resposta_da_requisicao = {
+                        codigo: 1050,
+                        erro: 'Falha de autorização'
+                    }
+
+                    reject(resposta_da_requisicao)
+                }
+
+                resposta_da_requisicao = {
+                    0: { id: 1, nome: 'João' },
+                    1: { id: 2, nome: 'Márcia'},
+                    2: { id: 3, nome: 'Marcela'}
+                }
+
+                resolve(resposta_da_requisicao)
+
+            }, 4000)
+        /* O operador then permite encadear, executar uma ação logo após a conclusão do processamento assíncrono da promise, o parâmetro são os dados do resolve, no final de cada then é possível passar um parâmetro para o seguinte, através do 'return'. Em casos de reutilizar o resolve, o catch é desconsiderado. Dentro de um then, podem ser feitos ainda outras promises. */    
+        }).then(() => {
+            
+            let promessa2 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                let resposta_da_requisicao = {}
+
+                if(false){
+
+                    resposta_da_requisicao = {
+                        codigo: 7788,
+                        erro: 'Erro ao recuperar os posts dos usuários'
+                    }
+
+                    reject(resposta_da_requisicao)
+                }
+
+                resposta_da_requisicao = {
+                    0: { id: 1, nome: 'Pedro' },
+                    1: { id: 2, nome: 'Judite'},
+                    2: { id: 3, nome: 'Mariana'}
+                }
+
+                resolve(resposta_da_requisicao)
+
+                }, 4000)
+            }).then(dados => {
+                console.log(dados)
+            }).catch(erro => {
+                console.log(erro)
+            })
+
+
+        }).then(() =>{
+            console.log("then número 2")
+            return 'then número 3'
+        }).then((param) => {
+            console.log(param)
+        }).catch((erro => {
+            console.log('Parâmetro erro que foi enviado na promise reject, que só pode ser capturado através de um catch que o recebe')
+        }))
+    </script>
+</body>
+</html>

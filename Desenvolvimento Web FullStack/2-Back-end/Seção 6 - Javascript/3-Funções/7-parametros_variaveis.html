@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com parâmetros variáveis e flexibilidade</title>
+
+    <script>
+
+        /*
+            flexibilidade: mesmo após a definição da assinatura (tipo e quantidade dos parâmetros), pode-se encaminhar mais ou menos parâmetros, sem ocorrer erros.
+
+            Em parâmetros variáveis sinigica que pode-se passar uma quantidade indefinida de parâmetros e mesmo assim a função lidar de maneira adequada.
+
+            arguments retorna a relação de parâmetros passados para a função, representa um objeto q é uma variável local.
+
+            for in vai percorrer cada uma das posições do objeto arguments e verificar os valores de cada posição, percorrerá os atributos desse objeto arguments.
+        */
+
+        function soma() {
+            var resultado = 0
+
+            for (var i in arguments){
+                console.log(arguments[i])
+                resultado += arguments[i]
+            }
+            return resultado            
+        }
+
+        console.log(soma(7, 5, 3.2, 0.8, ' Texto'))
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

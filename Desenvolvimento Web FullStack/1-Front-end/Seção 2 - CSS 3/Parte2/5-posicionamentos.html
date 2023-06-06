@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Posicionamentos (static, relative, absolute e fixed</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			background: #007fc7;
+		}
+
+		h1 {
+			/*Estático é o posicionamento padrão dos elementos, que seguem o fluxo comum do documento.*/
+			position: static;
+		}
+
+		p {
+			width: 400px;
+		}
+
+		#container {
+			background: #FFF;
+			width: 800px;
+			/*10px superior e inferior; automático nas laterais*/
+			margin: 10px auto;
+			padding: 10px;
+		}
+
+		.relative {
+			border: 1px solid red;
+			/*
+				Em posicionamentos relativos se faz necessário o uso de propriedades de deslocamento para movimentar o parágrafo: top, right, bottom e left. Elementos com posicionamento relativos podem ser deslocados, baseado na sua posição inicial/anterior. 
+			*/
+			position: relative;
+			top: 20px;
+			left: 200px;
+		}
+
+		.absolute {
+			/*
+				posição absoluta sai do fluxo normal do documento sem afetar a posição dos outros elementos. O deslocamento da posição absoluta é calculada em relação ao seu container/elemento pai (caso esse tenha um posicionamento diferente do estático, se não vai ser baseado no body) em que o elemento está inserido. 
+			*/
+			border: 1px solid red;
+			background: #f2f2f2;
+			position: absolute;
+			top: 80px;
+			left: 500px;
+		}
+
+		.fixed {
+			/*Mantém o bloco fixado em determinado ponto em relação a janela do navegador e também sai do fluxo padrão do documento.*/
+			border: 1px solid red;
+			background: #f2f2f2;
+			position: fixed;
+			top: 0px;
+			right: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1>Posicionamentos</h1>
+
+		<p class="relative">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+			industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+			scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+			electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+			Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+			Aldus PageMaker including versions of Lorem Ipsum.
+		</p>
+
+		<p class="absolute">
+			absolute Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+			industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+			scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+			electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+			Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+			Aldus PageMaker including versions of Lorem Ipsum.
+		</p>
+
+		<p class="fixed">
+			fixed Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+			industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+			scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+			electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+			Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+			Aldus PageMaker including versions of Lorem Ipsum.
+		</p>
+	</div>
+</body>
+
+</html>

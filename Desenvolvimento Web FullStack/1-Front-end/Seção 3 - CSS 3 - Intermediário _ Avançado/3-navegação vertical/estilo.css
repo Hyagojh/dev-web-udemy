@@ -1,0 +1,44 @@
+/*
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0; 
+}
+
+li {
+	padding: 5px;
+	background: url(imagens/seta.png) no-repeat left center;
+}
+*/
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul a {
+	width: 200px;
+	height: 40px;
+	display: block;
+	color: #000;
+	text-decoration: none;
+	text-indent: 40px;
+	line-height: 40px;
+	background: #f7b600 url(imagens/menu.png) no-repeat left bottom;
+}
+
+a:hover {
+	/*Causa o efeito de troca de cor no menu, movimentando o background*/
+	background-position: right bottom; 
+	background-color: #f99200;
+	color: #FFF;
+}
+
+/*Aplicar a formatação em toda classe seguida de link fazendo com que se marque a página que está ativa.*/
+#home #navegacao .home a, 
+#sobre #navegacao .sobre a {
+	background-position: right bottom; 
+	background-color: #f99200;
+	color: #FFF;
+}

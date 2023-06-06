@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+
+    <script>
+
+        /*
+            Proporciona uma forma mais enxuta de escrever funções anônimas.
+        */
+
+        /*função anonima 'normal'
+
+        let quadrado = function(x = 5) {
+            return x * x
+        }*/
+
+        /*arrow function
+
+        let quadrado = (x) => {
+            return x * x
+        }*/
+
+        /*
+            Em caso de apenas um único parâmetro os parentêses são opcionais, em apenas uma instrução de retorno também n precisa de chaves:
+            let quadrado = x => x*x
+        */
+
+        let quadrado = x => x*x
+
+        document.write(quadrado())
+
+        let parOuImpar1 = function(numero) {
+            if ((numero % 2) == 0){
+                document.write(`${numero} é Par`)
+            } else {
+                document.write(`${numero} é Ímpar`)
+            }
+        }
+
+        document.write(parOuImpar(7))
+
+        //arrow function com if ternário
+        let parOuImpar = numero => numero % 2 === 0 ? 'par' : 'impar' //return implícito
+
+        document.write (parOuImapr(10))
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

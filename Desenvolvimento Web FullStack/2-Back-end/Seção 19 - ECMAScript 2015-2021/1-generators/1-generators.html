@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generators</title>
+    <script>
+        /*
+         Generators são funções especiais que podem ser executadas, pausadas e continuadas em diferentes estados da sua execução, através de palavras reservadas. O asterisco indiga o generator e o método 'next' permite que o conoteúdo seja executado completamente ou até um determinado ponto específico da função. Yield indica que tudo que estiver antes dela e a linha dela deve ser executado.
+        */
+
+        /*function* testeGenerator(){
+            console.log('Teste 1')
+            yield console.log('Teste 2')
+            console.log('Teste 3')
+
+            return 'Teste 4'
+        }
+
+        let meuGenerator = testeGenerator() /* uma função generator retorna um objeto iterator 
+
+        meuGenerator.next()
+        console.log('---------')
+        meuGenerator.next() //executa as linhas restantes
+
+        console.log(meuGenerator.next());
+        */
+    </script>
+</head>
+<body>
+        <!-- Chat -->
+        <script>
+            function* conversar(){
+                /* 
+                    opcao indica que no next, será necessário enviar um parâmetro.
+                    etapa anterior que será passado um parâmetro e qual a variável que a receberá 
+                */
+                let opcao = yield  'E aí, tudo bem?'
+
+                if(opcao == 'sim'){
+                    yield 'ótimo, fico feliz'
+
+                    opcao = yield 'Como eu posso te ajudar? Quer uma piada?'
+
+                    if(opcao == 'sim'){
+                        /*Fundamental acessar o arquivo por meio de um request*/
+                        fetch('dados/piadas.json')
+                            .then(resposta => resposta.json())
+                            .then(piadas => {
+                                let piada = piadas[Math.floor((Math.random() * 10))]
+                                
+                                console.log(piada.piada)
+
+                                setTimeout(() => {
+                                    console.log(piada.resposta)
+                                    console.log('Bão demais kkkkkkkk')
+                                }, 4000)
+                            })                    
+                    } else {
+                        yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com um atendente'
+                    }
+                } else {
+                    yield 'Respire fundo e tenha paciência'
+                    
+                    yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com um atendente'
+                }       
+                
+                return 'Atendimento Finalizado'
+            }
+
+            let conversa = conversar()
+
+            function acao(){
+
+                let resposta = document.getElementById('resposta').value
+
+                let iteracao = conversa.next(resposta)
+                console.log(iteracao)
+
+                if(iteracao.done){
+                    document.getElementById('teste').style,display = 'none'
+                }
+            }
+        </script>
+        
+    <div id="teste">
+        <button type="button" onclick="acao()">Avançar</button>
+        Resposta: <input type="text" id="resposta">
+    </div>
+</body>
+</html>

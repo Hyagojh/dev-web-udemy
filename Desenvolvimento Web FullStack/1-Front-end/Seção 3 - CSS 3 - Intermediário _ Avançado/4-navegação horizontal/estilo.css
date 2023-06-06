@@ -1,0 +1,36 @@
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 720px;
+	background: #159cb0 url(imagens/fundo-horizontal.png) repeat-x;
+	/*
+	Ao invés de usar clear, torna-se a ul também um elemento flutuante
+	para correr no mesmo fluxo q as li
+	*/
+	float: left;
+}
+
+ul li {
+	float: left;
+	display: block;
+}
+
+ul a {
+	display: block;
+	padding: 0 2em;
+	line-height: 2em;
+	text-decoration: none;
+	color: #fff;
+	/*Criando um divisor*/
+	background: url(imagens/divisor.png) repeat-y; 
+}
+/*Remove o primeiro divisor do menu*/
+ul .primeiro a {
+	background: none;
+}
+
+ul a:hover {
+	color: #085662;
+	background: #44cade;
+}

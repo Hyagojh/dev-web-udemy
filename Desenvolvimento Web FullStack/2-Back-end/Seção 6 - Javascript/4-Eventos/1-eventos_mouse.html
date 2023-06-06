@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+
+        /*
+            Nos possibilita capturar ações que são feitas pelo usuário dentro do browser, como por exemplo o movimento do mouse, um clique no teclado, redimensionamento na tela, foco do cursor, carregamento da página e etc...
+        */
+
+        /*
+            Exemplos mouse: onClick (quando elemento é clicado), onDblClick (clicado duas vezes), onMouseUp (Clique liberado), onMouseOver (Cursor do mouse sobrepõe um elemento), onMouseOut (Sai da região da página ocupada pelo elemento)
+        */
+
+        function acao() {
+            alert('Evento disparado')
+        }
+
+    </script>
+
+    <title>Eventos - Mouse</title>
+</head>
+<body>
+    <!--Os eventos são declarados nos elementos HTML utilizando a sintaxe de propriedade-->
+    <!-- <div onclick="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+
+    <!-- <div ondblclick="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+
+    <!-- <div onmouseup="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+
+    <!-- <div onmouseover="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+
+    <div onmouseout="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div>
+
+</body>
+</html>

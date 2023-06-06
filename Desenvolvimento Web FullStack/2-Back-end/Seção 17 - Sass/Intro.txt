@@ -1,0 +1,5 @@
+Syntactically Awesome Style Sheets - é uma nova forma de escrever código css, podemos dizer de forma grosseira que é uma forma de programar seu arquivo de estilo.
+
+O Sass funciona de forma pré-processada, quer dizer que você não irá utilizar o arquivo em produção, ele será processado para a utilização final do arquivo css. Essa conversão pode ser feita através de linha de comando com comandos específicos, inclusive de forma a monitorar e transcrever automaticamente determinado arquivo.
+
+extensão .scss (comporta Sass - modo identado e CSS - formato css/sass - no mesmo arquivo)

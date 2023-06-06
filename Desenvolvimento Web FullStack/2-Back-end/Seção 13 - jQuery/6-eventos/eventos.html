@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Eventos</title>
+
+		<style>
+			#divExterna {
+				background-color: #ccc;
+				height: 80px;
+				width: 80px;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			/*
+				Toda interação do usuário com o browser pode ser capturada, podendo ser disparado uma ação (função) e o JQuery
+			*/
+
+			$(document).ready(() => {
+				$('#onload').html('Página carregada')
+				
+				/*
+					window é um objeto que guarda o estado da janela do navegador, quando o scroll for acionado, a função de callback executará (por meio de arrow function) uma ação
+				*/
+
+				$(window).scroll(() => {
+					$('#scroll').html('Scroll acionado')
+				})
+
+				$(window).resize(() => {
+					$('#resize').html('Página redimensionada').css('background-color', 'red')
+				})
+
+				/*
+					'this' no contexto de função de callback faz referência ao elemento alvo da caputa do evento, no caso '#div1'
+
+					$('#div1').scroll(function(){
+					$(this).css('background-color', 'blue')
+					})
+				*/
+				
+				/*
+					para trabalhar com arrow function nesses casos, é preciso recuperar o target do evento recebido pela arrow como parâmetro
+				*/
+				$('#div1').scroll(e => {
+					$(e.target).css('background-color', 'blue')
+				})
+
+				$('#btn1').mousedown(() => {
+					$('#div2').css('background-color', 'green')
+				})
+
+				$('#btn1').mouseup(() => {
+					$('#div2').css('background-color', 'blue')
+				})
+				
+				/*
+					evento de click tem o mesmo efeito do mouseup, pois ele é o ciclo completo do click e o mouseup é o encerramento do mesmo, ou seja, após o mousedown e up, o click é certo.
+
+					$('#btn1').click(() => {
+						$('#div2').css('background-color', 'blue')
+					})
+				*/
+
+				$('#btn2').dblclick(() => {
+					$('#div2').css('background-color', 'yellow')
+				})
+
+
+				/*
+					captura a posição do mouse através do parâmetro passado a arrow function
+				*/
+				$('#btn1').mousemove((e) => {
+					console.log(e.offsetX, e.offsetY)
+					$('#resultadoDiv').html('X: ' + e.offsetX + ' Y: ' + e.offsetY)
+				})
+
+				/*
+					mouseenter e mouseover são ações que serao disparadas quando o mouse entra em determinada regiao do navegador, já mouseleave e mouseout são ações quando o mouse deixa a região. Então pq dois métodos que fazem a mesma coisa? mouseover/mouseout (antigos) eles não trabalham bem com a hierarquia de elementos html, não dando independência as mesmas, caso tivessem duas divs e caputaressemos os eventos de entrada e saída de cada uma, ocorreriam problemas com isso. mouseenter/mouseleave (novos) -> corrige esse problema.
+				*/
+
+				$('#divExterna').mouseover(() => {
+					$('#resultadoDiv1').html('entrou')
+				})
+
+				$('#divExterna').mouseout(() => {
+					$('#resultadoDiv1').html('saiu')
+				})
+
+				/*
+					keydown e keyup (pressão e liberação das teclas)
+				*/
+
+				$('#teclado').keydown(() => {
+					$('#resultadoTecla').html('Tecla pressionada')
+				})
+
+				$('#teclado').keyup(() => {
+					$('#resultadoTecla').html('Tecla liberada')
+				})
+
+
+				/*
+					form
+				*/
+
+				$('#nome').focus(() => {
+					console.log('Esse elemento HTML recebeu foco (nome)')
+				})
+
+				$('#email').focus(() => {
+					console.log('Esse elemento HTML recebeu foco(email)')
+				})
+
+				//outro notação, tornando o código mais enxuto
+				$('#nome, #email').blur(() => {
+					console.log('Esse elemento HTML perdeu o foco')
+				})
+
+				/*
+					captura a mudança de estado de um input type radio, selects ou checkbox
+				*/
+				$('#opcao').change(() => {
+					console.log('Opção modificada')
+				})
+
+				/*
+					Nesse caso intercepta o submit e previne seu comportamento padrão de enviar os dados e atualizar a página, podendo serem feitas trativas ou validações a partir disso
+				*/
+
+				$('#form').submit((e) => {
+					e.preventDefault()
+					console.log('Formulário enviado')
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span>Resize Window: </span><span id="resize">?</span>
+			<div id="div1" style="height: 100px; width: 100px; border: solid 1px; overflow-y: scroll">
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			<hr />
+
+			<h3>Mouse</h3>
+			<button id="btn1" type="button">Clique aqui</button>
+			<button id="btn2" type="button">Clique aqui 2x</button>
+			<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span id="resultadoDiv">Resultado do evento sobre a div</span>
+			<hr />
+
+			<div id="divExterna"></div>
+			<span>Div Externa: </span><span id="resultadoDiv1"></span>
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input type="text" id="teclado" />
+			<span id="resultadoTecla">Resultado do evento sobre o input</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form id="form">
+				<span>Nome:</span>
+				<input type="text" id="nome" />
+
+				<span>E-mail:</span>
+				<input type="text" id="email" />
+
+				<span>Motivo do contato:</span>
+				<select id="opcao">
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button type="button">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>

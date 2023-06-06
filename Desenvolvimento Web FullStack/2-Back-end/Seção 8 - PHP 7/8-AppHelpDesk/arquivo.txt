@@ -1,0 +1,2 @@
+3#Sistema Operacional não carrega#Software#Sistema operacional não abre
+4#Laptop não liga#Hardware#Laptop fica com a tela escura

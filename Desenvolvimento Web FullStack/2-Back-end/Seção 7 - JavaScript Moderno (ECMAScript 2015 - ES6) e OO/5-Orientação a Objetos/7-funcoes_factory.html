@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Factory</title>
+
+    <script>
+
+        /*
+            Através do design pattern (uma forma comum de resolver problemas já conhecidos) Factory é possível implementar uma fábrica para criação de objetos em tempo de execução. Combinam chamadas de função com retorno de objetos literais, que podem ser criados com base em parâmetros passados para essas respectivas funções. Basta chamar a função, passar ou n parâmetros e será retornado um objeto.
+        */
+
+
+        //objeto literal
+
+        let Bicicleta1 = {
+            cor: 'Branca',
+            marcha: 'única',
+            aro: 12,
+            pedalar() {console.log('Método pedalar executado')}
+        }
+
+        console.log(Bicicleta1)
+
+        //factory e atribuição dinâmica de valores
+        let BicicletaFactory = function(cor, marcha, aro) {
+            return {
+               cor,
+               marcha,
+               aro,
+               pedalar() {console.log('Método pedalar executado')} 
+            }
+        }
+
+        let Bicicleta3 = BicicletaFactory('Vermelha', '18', 26)
+        console.log(Bicicleta3)
+
+        console.log(`Cor: ${Bicicleta3.cor}`)
+        Bicicleta3.pedalar()
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

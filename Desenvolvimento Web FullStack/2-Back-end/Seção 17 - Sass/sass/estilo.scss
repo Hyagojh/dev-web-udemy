@@ -1,0 +1,187 @@
+
+// $cor: black;
+
+// h2 {
+//     color: $cor;
+// }
+
+/* Aninhamento e referenciando seletor pai*/
+
+// #conteudo {
+//     background: green;
+//     padding: 15px;
+
+//     h1, h2 {
+//         color: black;
+//     }
+    
+//     a {
+//         color: red;
+//         &:hover {
+//             color: yellow;
+//         }
+//     }
+// }
+
+/* Variáveis */
+// $cor-primaria: red;
+// $tamanho-titulo: 20px;
+
+// h2, h3 {
+//     color: $cor-primaria;
+// }
+
+// /* Escopo */
+// $cor-padrao: blue; 
+// #rodape {
+//     $cor-padrao: green; //escopo local, para tornar global escreve !global após o valor
+//     //$cor-padrao: green !global;
+//     background-color: $cor-padrao;
+// }
+
+// h2 {
+//     color: $cor-padrao;
+// }
+
+// /* Interpolação */
+
+// $classe: red;
+// $classe: vermelho;
+// $color: color;
+
+// .#{$classe} {
+//     #{$color}: $classe;
+// }
+
+// /* For - through e to - para onde, dê e até onde, usando trough o '3' está incluso, utilizando 'to' é apenas até 3, sem inclui-lo */
+// @for $i from 1 through 3 {
+//     .item-#{$i} {
+//         background: green;
+//         margin-bottom: 2px;
+//     }
+// }
+
+// /* while */ 
+// $contador: 1;
+
+// @while $contador < 5 { 
+//     .item-#{$contador} {
+//         background: orange;
+//         margin-bottom: 2px;
+//     }
+//     $contador: $contador + 1; 
+// } 
+
+
+// /* each - usado para criação de listas - para cada cor dentro da lista */
+
+// $lista: green, yellow, red;
+// $contador: 1;
+// @each $cor in $lista {
+//     .item-#{$contador} {
+//         background: $cor;
+//         margin-bottom: 2px;
+//     }
+//     $contador: $contador + 1; 
+// }
+
+// /* Retorna quantos % uma coluna (recebida por parâmetro) representa no sistema de grids. Existem funções nativas muito úteis também com: percentage */
+// $total-colunas: 12;
+// @function largura-coluna($coluna){
+//     @return percentage($coluna/$total-colunas);
+// }
+
+// //$resultado: largura-coluna(12);
+
+
+// @for $i from 1 through $total-colunas {
+//     .col-#{$i} {
+//         width: largura-coluna($i);
+//         background: green;
+//     }
+// }
+
+/* Mixin -> uma maneira de reaproveitar as estruturas que se repetem */
+
+@mixin titulo($cor) {
+    color: $cor;
+    background: green;
+    padding: 10px 5px;
+}
+
+h1 {
+    @include titulo (white);
+}
+   
+
+h2 {
+    @include titulo (green);
+}
+
+/* Herança com múltiplas diretivas */
+
+.classe1 {
+    color: red;
+}
+
+.classe2 {
+    background: black;
+}
+
+.vermelho  {
+    @extend .classe1;
+    @extend .classe2;
+}
+
+/* Encadeamento de diretivas */
+
+.classePai {
+    color: red;
+}
+
+.classeFilho {
+    background: black;
+    @extend .classePai;
+}
+
+.erro  {
+   @extend .classeFilho;
+   padding: 10px;
+}
+
+/* Placeholders servem para criar classes que não são processadas, ou seja se eu adicionar ao invés de ponto o símbolo de porcentagem na classePai e filho, a classe erro segue herdando, mas as classes acima n são criadas em css */
+
+
+/* Diretivas de controle */
+$cor: black;
+@if($cor == green){
+    p {
+        color: $cor;
+    }
+} @else if($cor == red) {
+    p{
+        color: $cor;
+    }
+} @else {
+    p{
+        color: white;
+    }
+}
+
+/* Diretivas de controle e Mixin */
+@mixin tema($tema: padrao){
+    @if($tema == natal){
+        background-color: red;
+        color: white;
+    } @else if($tema == blackfriday){
+        background-color: black;
+        color: white;
+    } @else{
+        background-color: white;
+        color: black;
+    }
+}
+
+body {
+    @include tema(natal);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções nativas para manipulações de string</title>
+
+    <script>
+
+        /*
+            String é considerado um valor primitivo, porém, ao ser interpretado o JS os converte em objetos, possuindo propriedades e métodos;
+        */
+
+        // Lenght é um atributo retorna a quantidade de caracteres de uma string
+        document.write('Jaques Hyago'.length)
+
+        // É um método que retorna o número do indice que um caractere ocupa 
+        document.write('Jaques Hyago'.charAt(7))
+
+        //É um método que retorna a posição do caractere na sua primeira ocorrência na string, sendo case sensitive
+        var nome = 'Jaques Hyago'
+        document.write(nome.indexOf('H'))
+
+        // É um método que permite substituir textos dentro de uma string, se o método encontrar a primeira cadeia de caracteres, ele substituirá pelo outro parâmetro 
+        document.write(nome.replace('Jaques Hyago', 'Hyago Jaques'))
+
+        // É um método que permite extrair parte de uma string, com base numa posição inicial, e o segundo parâmetro indica quantos caracaters devem ser exibidos na sequencia
+        document.write(nome.substr('7', '5'))
+
+        // Métodos como toLocaleLowerCase, toLocaleUpperCase, toLowerCase e toUpperCase são auto explicativos
+        document.write(nome.toLocaleUpperCase())
+
+        // Método que remove as extremidades em branco de uma string 
+        document.write('-' + nome.trim() + '-')
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

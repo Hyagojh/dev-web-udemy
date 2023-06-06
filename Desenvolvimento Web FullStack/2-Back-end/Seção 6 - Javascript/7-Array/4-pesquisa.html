@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Pesquisa</title>
+
+    <script>
+
+        /*
+            para pesquisas dentro de array é utilizado o método indexOf passando commo parâmetro o elemento alvo da pesquisa. Caso o retorno seja (-1) significa que o elemento não existe. Caso exista o método retorna o índice do elemento.
+        */
+
+        var lista_frutas = Array('Banana', 'Maça', 'Morango', 'Uva')
+
+        var auxiliar = lista_frutas.indexOf('Morango')
+
+        if(auxiliar === -1) {
+            console.log('Elemento não existe')
+        } else {
+            console.log('Elemento existe e está na posição ' + auxiliar)
+        }
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

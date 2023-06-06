@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var e Let - Análise de contexto 1 e 2 + Const</title>
+
+    <script>
+
+        /*
+            ECMA - European Computer Manufactorer Association. ECMA é o padrão/especificação criado pela empresa.
+
+            Let tem a mesma função do var, porém, ele preserva o escopo da aonde a variável foi criada. No caso as variáveis de bloco elevam e funcionam dentro de função ou viram globais dependendo de onde o bloco está contido, usando let isso n acontece.
+
+            Const tem a mesma proposta do let em relação ao escopo, porém, ele cria uma constante, ou seja que não sofre alterações em seu valor ao longo do script. É de boa prática utilizar sempre caracteres maiúsculas e sempre precisam ser atribuidas no momento da declaração.
+        */
+
+        /* Exemplo clássico de problemas do var e o içamento (elevação de escopo)
+        var serie = 'Friends'
+
+        if(true){
+            var serie = 'TWD'
+            console.log('Dentro do bloco: ' + serie)
+        }
+        console.log('Fora do bloco: ' + serie)
+        */
+
+        let serie = 'Friends'
+
+        if(true){
+            let serie = 'TWD'
+            console.log('Dentro do bloco: ' + serie)
+        }
+        console.log('Fora do bloco: ' + serie)
+
+        const SERIE = 'Friends'
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

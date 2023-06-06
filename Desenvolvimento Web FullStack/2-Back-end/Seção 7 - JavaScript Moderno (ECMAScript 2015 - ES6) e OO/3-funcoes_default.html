@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parâmetros Default</title>
+
+    <script>
+
+        /*
+          Visa mitigar problemas provenientes da ausência da definição de parâmetros nas chamadas nas funções. Com isso no ES6 existe a possibilidade de atribuir na assinatura do método valores default.
+        */
+
+        function contarUmaHistoria(personagem = 'Rex', atividade = 'latir', nome_dono = 'José') {
+            document.write(`Era uma vez um cachorro chamado ${personagem}, ele adorava ${atividade}, seu dono era o ${nome_dono} e eles viveram felizes para sempre`)
+        }
+
+        contarUmaHistoria()
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

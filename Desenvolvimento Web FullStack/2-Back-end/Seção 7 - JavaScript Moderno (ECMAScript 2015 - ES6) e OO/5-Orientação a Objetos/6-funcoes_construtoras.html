@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Construtoras</title>
+
+    <script>
+
+        /*
+            Outro meio de criação de objetos. Trata de uma função que possui um escopo e que vai ser recuperada dentro do código a partir do operador new.
+
+            O princípio do encapsulamento é limitado no JS, em funções construtoras se tem uma flexibilidade, pois pode-se criar atributos e métodos com o escopo na função, se tornando 'private' 
+        */
+
+        let Carro = function() {
+            this.cor = 'Amarelo'
+            this.modelo = 'Chevette'
+            this.velocidadeAtual = 0
+            var velocidadeMaxima = 150
+            var quilometrosRodados = 0
+
+
+            this.acelerar = function(){
+                let velocidade = this.getVelocidaddeAtual() + 50
+                if(velocidade > velocidadeMaxima){
+                    velocidade = velocidadeMaxima
+                }
+                this.setVelocidadeAtual(velocidade)
+            }
+            
+            this.getVelocidaddeAtual = function(){
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = function(velocidade){
+                setQuilometrosRodados(0.07)
+                this.velocidadeAtual = velocidade
+            }
+
+            var setQuilometrosRodados = function(q){
+                quilometrosRodados += q
+            }
+        }
+        
+        let chevrolet = new Carro()
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Elementos flutuantes</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.conteudo {
+			background: blue;
+			border: 1px solid gray;
+			width: 150px;
+			height: 150px;
+
+			/*
+				Faz com que os conteúdos flutuem para a direção indicada. Ele também saí do fluxo padrão do documento e pode se sobrepor a outros componentes, onde
+				que para esses, é como se o conteúdo flutuante não existisse, porém, conteúdos não flutuantes não ocupam o espaço dos flutuantes, apenas o contrário é verdade, por isso também a necessidade do clear. Porém, quando o atributo é usado em classes, como é o caso desse exemplo, onde os três elementos flutuam a esquerda, eles passam a ocupar o mesmo fluxo e logo não se sobrepõem. Elementos flutuantes possuem seu fluxo próprio.
+			*/
+			float: left;
+		}
+
+		/*
+		.conteudo1 {
+			background: red;
+			border: 1px solid gray;
+			width: 150px;
+			height: 150px;
+			float: right;
+		}
+		*/
+
+		.clear {
+			/*
+				especifica se um elemento pode ter elementos flutuantes ao seu lado ou se esse conteúdo deve ser movidos para abaixo dos elementos flutuantes (clear). Essa propriedade se aplica à elementos flutuantes ou não flutuantes. Ele 'limpa' o fluxo de elementos e pode receber os valores: left, right, both ou none, que indicam a direção a qual o fluxo deve ser limpo. Sempre ao usar elementos flutuantes é necessário fazer o uso do 'clear', pois o mesmo 'empurra até que o conteúdo possa ser apresentado totalmente' e faz com que uma div principal que tenha elementos flutuantes dentro dela se expanda e mostre seu conteúdo normalmente.
+			*/
+ 			clear: left;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="conteudo">
+		Conteúdo 1
+	</div>
+
+	<div class="conteudo">
+		Conteúdo 2
+	</div>
+
+	<div class="conteudo">
+		Conteúdo 3
+	</div>
+
+	<p class="clear">
+		O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto
+		padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar
+		um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica,
+		mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de
+		Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o
+		Aldus PageMaker que incluem versões do Lorem Ipsum.
+
+		O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto
+		padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar
+		um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica,
+		mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de
+		Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o
+		Aldus PageMaker que incluem versões do Lorem Ipsum.
+	</p>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Rest/Spread</title>
+
+    <script>
+
+        /*
+            Spread = espalhar
+            Rest = juntar
+
+            Oq define se o operador é spread ou rest é o contexto em q está sendo utilizado, caso espalhe estruturas de dados é spread, caso junte, é rest.
+
+            No contexto spread:
+        */
+
+        let tituloArtigo = 'Como utilizar o operador rest/spread'
+
+        //Pode-se espalhar os caracteres da string com spread
+
+        console.log(tituloArtigo)
+        console.log(...tituloArtigo)
+
+        /*
+            Espalha a string dentro de um array de forma q cada um dos caracteres ocupe 
+            um índice
+        */
+
+        console.log([...tituloArtigo])
+        
+        //Pode-se espalhar arrays em outros arrays
+        let listaCursos1 = ['NodeJS e MongoDB', 'ES6, TypeScript e Angular 4']
+        let listaCursos2 = ['Multiplataforma Android/IOS', 'Introdução ao GNU/Linux']
+        let listaCursosCompleto = ['Web Completo', 'Android Completo', ...listaCursos1, ...listaCursos2]
+
+        console.log(listaCursosCompleto)
+
+        //Spread no contexto de objetos
+
+        let pessoa = {nome: 'João', idade: 27}
+        let clone = {endereco: 'Rua Abc', ...pessoa}
+
+        console.log(clone)
+
+
+        /*
+            No contexto Rest (muito utilizado em conjunto com funções):
+            Recebe todos os parâmetros e os junta em estrutura de arrays, onde pode-se percorrer todos os índices de forma dinâmica.
+
+            na prática seria como: function soma([3, 8, 5, 7]))
+        */
+
+        function soma(...param) {
+            let resultado = 0
+
+            console.log(param)
+
+            param.forEach(v => resultado += v)
+
+            return resultado
+        }
+
+        console.log(soma(3, 8, 5, 7))
+
+
+        /*
+            O primeiro parâmetro indicado será recebido pela função e armazenado em 'm', os demais parâmetros serão recebidos e unificados em um parâmetro array 'p'
+        */
+
+        function multiplicacao(m, ...p) {
+            console.log(m)
+            console.log(p)
+
+            let resultado = 0
+
+            p.forEach(v => resultado += m * v)
+
+            return resultado
+        }
+
+        console.log(multiplicacao(5, 7, 12, 3, 49))
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

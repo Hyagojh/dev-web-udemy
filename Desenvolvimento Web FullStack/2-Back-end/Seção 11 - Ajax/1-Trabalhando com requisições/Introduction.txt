@@ -1,0 +1,17 @@
+<!-- 
+
+Ajax é um acrônimo para Asynchronous JavaScript And XML, uma metodologia de programação que possibilita a comunicação assíncrona entre front e back-end de aplicações web. Atualmente o formato de dados mais utilizado para comunicação entre front e back é o JSON e embora o Ajax tenha sido desenvolvido inicialmente para ser utilizado apenas com XML, é possível fazer 'parses'.
+		
+No modelo de comunicação tradicional, durante uma requisição o browser fica 'travado', aguardando uma resposta do servidor para dar sequência ao processamento e 'liberando' o uso para o client, ou seja, de forma síncrona.
+
+Na metodologia AJAX, a própria aplicação, através da captura de um evento no computador cliente realiza uma requisição para o servidor, através de um objeto XMLHTTP Request (Controlado e manipulado na linguagem JS) que realiza todo o processo de envio da requisição e captura da resposta e durante esse período a aplicação web não fica travada.  
+
+REQUISIÇÕES SÍNCRONAS -> Os métodos síncronos quando é afetuado uma requisição o browser responsável fica aguardando o servidor, cada requisição deve ser primeiro finalizada, para aí sim outra requisição seja efetuada.
+
+REQUISIÇÕES ASSÍNCRONAS -> O browser é capaz de disparar diversas requisições sem necessariamente que haja um sincronismo entre elas, possibilitando requisições paralelas. 
+
+Ao invés de navegar entre páginas distintas, haverá uma única página que será responsável por requesita apenas o conteúdo dinâmico. A aplicação não sofrerá refresh e a aplicação gerenciará todo processo de requisição e resposta.
+
+'pagina_1.html' e semelhantes, demonstram as requisições síncronas, fazendo o refresh e navegando entre elas. Já as 'pagina_1_conteudo.html' e semelhantes representam as requisições assíncronas onde apenas o conteúdo dinâmico/os dados, serão apresentados dentro do molde da principal que é 'requisicoes_assincronas.html'
+
+-->

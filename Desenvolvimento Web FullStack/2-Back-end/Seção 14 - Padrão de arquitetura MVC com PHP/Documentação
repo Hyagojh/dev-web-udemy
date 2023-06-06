@@ -1,0 +1,64 @@
+####### Padrão de arquitetura/Architectural Pattern #######
+
+É a forma como as funcionalidades de um software serão organizadas, mas não o software em si. Ex: Cliente-Servidor, P2P, Plugin, MVC, MVT, Computação distribuída etc...
+
+####### Padrão de projeto/Design Pattern ####### 
+
+Técnicas de implementação de funcionalidades a nível de código, testadas e aprovadas. Ex: Prototype, Singleton, FlyWeight, Proxy e são divididos em três categorias pelo GoF - Padrões de criação, padrões estruturais e padrões comportamentais... Mas existem muitos outros, como os estabelecidos pelo GRASP.
+
+
+
+####### Requisitos Funcionais #######
+
+Representam recursos da aplicação em si, ligados diretamente as funcionalidades da aplicação. Ex: Um carrinho de compras, um e-mail de contato e etc...
+
+*** Design Pattern lida com isso. ***
+
+####### Requisitos Não-Funcionais #######
+
+Recursos que não estão diretamente relacionados com as funcionalidades da aplicação. Ex: Disponibilidade, segurança, reusabilidade e etc...
+
+*** Architectural Pattern lida com isso. ***
+
+
+
+
+###### ESTRUTURA DA ARQUIETURA #######
+
+CAMADA CONTROLLER: É responsável por receber todas as requisições feitas pela aplicação de modo a controlar oq deve acontecer e quando deve acontecer. É uma interface entre as requisições, o processamento e a resposta.
+
+CAMADA MODEL: É responsavél pela manipulação dos dados no BD. Conhecida como uma camada de regras de negócio.
+
+CAMADA VIEW: É responsável pela exibição dos dados, pela formação de páginas html dinâmicas, xml, json e afins.
+
+*** Um exemplo ***: Ao acessar um site de anúncios de produtos, na condição de cliente o navegador fará uma requisição para a aplicação solicitando uma ação de listagem dos produtos, o controller interceptará a requisição e vai utilizar o model para recuperar os dados e na sequência ele utilizará uma view formando um arquivo para entregar ao navegador.
+
+
+
+####### ESTRUTURA DA APLICAÇÃO #######
+
+O diretório Public é análogo ao diretório 'htdocs' do Xampp, que contém o script público da aplicação web, a porta de entrada para o back-end.
+
+O diretório App recebe os arquivos da aplicação em si, onde são criadas as três camadas da arquitetura MVC.
+
+O composer é o módulo que lidará com as dependências do miniframework, pois dentro da estrutura do projeto, serão criadas diversas classes e com o composer e autoload será possível carregar todos os scripts da aplicação e fazer o uso de acordo com a especificação passada para o sistema de autoload, que será a PSR-4. O composer mapeará toda a estrutura da aplicação, vai recuperar as classes contidas dentro dos scripts e permitir o acesso através das especificações de namespaces.
+
+O arquivo composer.json específica algumas informações que serão base na instalação do composer, como por exemplo informar as pastas que serão mapeadas.
+
+Na instalação do composer será criado um diretório chamado vendor, que serão armazenados os pacotes que serão adicionados a aplicação. A lógica e configuração do framework. 
+
+
+
+####### MÓDULO DE ROTEAMENTO #######
+
+Inicialmente quem intercepta as requisições é o arquivo index.php no diretório público, que carrega o autoload do composer e por sua vez fará o carregamento de todas as classes do projeto. O Route.php não está diretamente relacionado com a arquitetura MVC, ele poderia ser feito dentro do controle, mas na verdade ele funciona como uma camada onde o cliente fará requisições http encaminhando rotas que serão interpretadas pelo sistema de roteamento através dos controloradores fará o disparo de ações em função das rotas. O módulo de roteamento vai nortear o que dentro dos controladores serão disparados, respeitando a integridade do controlador.
+
+
+
+####### CAMADA DE VISUALIZAÇÃO #######
+
+A ideia é isolar todo o conteúdo referente a exibição de dados dos controladores. Onde o diretório index tem por ideia centralizar todas as views que poderão ser utilizadas dentro das actions contidas dentro de IndexController.
+
+O layout forma a 'cara' da aplicação, onde apenas as actions fazem a troca de conteúdo interno.
+
+

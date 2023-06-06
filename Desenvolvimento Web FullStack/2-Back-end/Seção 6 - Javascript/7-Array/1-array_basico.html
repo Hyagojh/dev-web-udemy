@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Básico</title>
+
+    <script>
+
+        /*
+            Array em JS é um objeto que possui seus métodos e atributos próprios, sendo necessária o instanciamento do mesmo parar criar uma variável desse tipo. O índice pode ser mesclado, também.
+        */
+
+        /*
+            var lista_frutas = [] --- Também funciona como declaração. Pode ser indicado o valor para cada indíce direto no construtor do array ou nos colchetes.
+
+            var lista_frutas = Array ('Banana', 'Maça', 'Morango', 'Uva') --- Também funciona como declaração, sendo os índices sequenciais
+            var lista_frutas = ['Banana', 'Maça', 'Morango', 'Uva'] --- Idem
+        */
+
+        /*
+            lenght está disponível para objetos tipo string e array, mas no caso de arrays ele conterá a quantidade de elementos dentro do array, desde que sejam indexados em valores numéricos sequenciais, sem intervalor e que inciem em zero. Basicamente ele conta o número de posições do array e não da sequencia q se atribui.
+        */
+
+        var lista_frutas = Array()
+
+        lista_frutas[1] = 100
+        lista_frutas[2] = true
+        lista_frutas['x'] = 'Morango' 
+        lista_frutas[4] = 'Uva' 
+
+
+        console.log (lista_frutas)       
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

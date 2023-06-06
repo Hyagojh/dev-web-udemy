@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluindo JavaScript em páginas HTML 5</title>
+
+    <!--
+        ######PRECEDÊNCIA DE EXECUÇÃO#######
+        Em geral o JS interage com os elementos html, que são renderizados com base em uma árvore de elementos, conecida como Document Object Model (DOM), e portanto são selecionados a partir do JS para sofrerem ou não alguma modificação, a partir de um ID.
+        Dependendo da localização em que é chamado o JS podem ocorrer problemas, caso o JS seja invocado no head para manipular uma informação como a "input", o html será interpretado e o js chamado antes da tag ser renderizada no navegador, o que causará conflito, sendo necessário que o script seja invocado após a renderização do item.
+    -->
+
+    <!--Inclusão de JS direto no head, assim como poderia ser direto no body-->
+    <script>
+        alert('Olá, seja bem vindo ao curso!!!');
+    </script>
+
+</head>
+<body>
+    <h1>Curso de JavaScript</h1>
+    <input 
+        type="text" 
+        placeholder="Teste de precedência" 
+        id="nome" 
+        disabled="disabled"
+    >
+    <!--Importar um JS externo, poderia ser aqui ou direto no head ou inline-->
+    <script src="meu_script.js"></script>
+</body>
+</html>

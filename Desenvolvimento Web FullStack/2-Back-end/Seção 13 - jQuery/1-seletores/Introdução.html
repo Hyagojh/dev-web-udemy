@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao jQuery - Seletores</title>
+    <!-- Inclusão da biblioteca jQuery via arquivo baixado   -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <!-- link CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        /*
+            JQuery é uma biblioteca JS com a proposta de escrever menos, fazendo mais. Ao adicionar o jquery, se tem diversos recursos já prontos para facilitar o desenvolvimento das aplicações. É como se o jquery fosse uma interface entre o JS e a API do DOM.
+        */
+
+        /*
+            '$' permite selecionar elementos, executar ações da biblioteca jQuery e acesso a muitos recursos da mesma.
+
+            selecionar elementos por tag - $(tag)
+            selecionar elementos por classe - $(.classe)
+            selecionar elementos por id - $(#id)
+        */
+
+        /*
+            Sendo o HTML gravitacional para o código ser executado e as seleções bem sucedidas é preciso criar uma função que, no caso, estabelece que os códigos a seguir só serão executados após a renderização completa do DOM. Existem outros métodos para se fazer isso. Com isso é possível deixar a codificação JS fora do html
+        */
+
+        $(document).ready(function(){
+            $('input')
+            $('select')
+            $('img')
+
+            $('.diversos1')
+
+            $('#menu1')
+
+            /*
+                Combinação de seletores do jQuery - Selecionar elementos por classe de tag específica
+            */
+
+            console.log($('div.exemplo1'))
+
+            //Selecionar elementos por classe de classe específica
+            console.log($('ul.lista1 .exemplo2'))
+
+            /*
+                Como atuar sobre o array de retorno da seleção de elementos. Filtros aplicáveis: :first = retorna o primeiro elemento, :last = retorna o último elemento, :even retorna os elementos de índices pares, :odd retorna os elementos de índices ímpares
+            */
+            console.log($('.lista1 .exemplo2:first'))  
+        })
+    </script>
+
+</head>
+
+<body>
+    <h1>Selecionando elementos parte 1</h1>
+
+    <div>Div 1</div>
+    <div class="diversos1">Div 2</div>
+
+    <ul id="menu1">
+        <li>Menu 1 - Item 1</li>
+        <li class="diversos1">Menu 2 - Item 2</li>
+        <li>Menu 3 - Item 3</li>
+    </ul>
+
+    <ul>
+        <li class="itemMenu2">Menu 1 - Item 1</li>
+        <li class="itemMenu2">Menu 2 - Item 2</li>
+        <li class="itemMenu2">Menu 3 - Item 3</li>
+    </ul>
+
+    <input type="text" placeholder="campo 1">
+
+    <select class="diversos1">
+        <option>Opção 1</option>
+        <option>Opção 2</option>
+    </select>
+
+    <br>
+    
+    <img src="carro.jpg" class="diversos2" id="imagem">
+
+    <br>
+
+    <!-- Parte 2 -->
+    
+    <h1>Selecionando elementos parte 2</h1>
+
+    <input type="text" placeholder="input 1">
+    <input type="text" placeholder="input 2">
+    <input type="text" placeholder="input 3">
+
+    <div class="lista1">
+        <div class="exemplo1">Div 1</div>
+        <div class="exemplo2">Div 2</div>
+        <div class="exemplo2">Div 3</div>
+    </div>
+
+    <ul class="lista1">
+        <li class="exemplo1">Opção 1</li>
+        <li class="exemplo2">Opção 2</li>
+        <li class="exemplo2">Opção 3</li>
+    </ul>
+
+    <ul class="lista2">
+        <li class="exemplo2">Opção 1</li>
+        <li class="exemplo2">Opção 2</li>
+        <li>Opção 3</li>
+    </ul>
+</body>
+
+</html>
+

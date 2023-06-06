@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreach</title>
+
+    <script>
+
+        /*
+            Em outras linguagens ele é um comando de repetição, já no JavaScript ele é uma função que fica abaixo do prototype do objeto array, no contexto ele é uma função aplicada a arrays, porém serve como estrutura de repetição, funcionando parecido com for in.
+
+            Como parâmetro ele aguarda uma função de callback que indicará para ele como ele tem que atuar em cada um dos indices do array, ela por sua vez recebe 3 parâmetros (sequenciados determinadamente), que são encaminhados a partir de instruções dentro do foreach onde o mesmo encaminhan não sendo necessário indicar todos os parâmetros ao forEach, podendo ser apenas o indice, array etc... Para cada índice no array a lógica da função de callback será executada. ForEach trabalha em cima apenas de valores numéricos
+
+            É comum passar como parâmetro uma variável que armazene a função de callback. Fazendo que apenas uma função sirva para diversos foreach e sejam especializadas.
+        */
+
+        var listaFuncionarios = ['Viviane', 'Rosângela', 'Miguel', 'Lucas', 'Fernanda']
+
+        document.write(listaFuncionarios[0])
+
+        console.log(listaFuncionarios)
+
+        listaFuncionarios.forEach(function(valor, indice, array){
+
+            console.log('índice ' + indice + ' | Valor: ' + valor)
+
+            if(valor == 'Viviane') {
+                array[indice] = 'Altera para um novo valor'
+            }
+        })
+
+        console.log(listaFuncionarios)
+        document.write('</br>' + listaFuncionarios[0])
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
